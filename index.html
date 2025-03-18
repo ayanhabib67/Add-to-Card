@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add to Card</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    body {
+      background-color: #2c2c2c;
+      color: #f5f5f5;
+    }
+    header {
+      background-color: #444;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .card {
+      margin: 10px;
+      height: 100%;
+      background-color: #333;
+      color: #f5f5f5;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 300px;
+    }
+    .card-img-top {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+      border-radius: 15px 15px 0 0;
+    }
+    .card-img-top:hover {
+      transform: scale(1.05);
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      color: white;
+      background-color: #007bff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    button:focus {
+      outline: none;
+      box-shadow: 0 0 5px 3px rgba(0, 123, 255, 0.8);
+    }
+    button:active {
+      transform: scale(0.98);
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+    .card-body #totalPrice1,
+    .card-body #totalPrice2,
+    .card-body #totalPrice3,
+    .card-body #totalPrice4,
+    .card-body #totalPrice5 {
+      font-weight: bold;
+      color: #f5f5f5;
+    }
+    .card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Add to Card</h1>
+  </header>
+  <div class="container-fluid text-center">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 animate__animated animate__lightSpeedInLeft">
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://p1-ofp.static.pub/fes/cms/2023/03/02/inlsscnqi5kqhfjlsdp9dzbzxxuqrt332573.jpg" class="card-img-top" alt="Laptop Image" />
+          <div class="card-body">
+            <h5 class="card-title">Laptop X1 Pro</h5>
+            <p class="card-text">Powerful laptop with Intel i7, 16GB RAM, and 512GB SSD.</p>
+            <div id="product1"></div>
+            <div id="counter"></div>
+            <div id="totalPrice1"></div>
+            <button onclick="addToCart1()">Add Laptop</button>
+            <button onclick="removeQuantity1()">Remove Laptop</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://img.freepik.com/premium-photo/wireless-headphones-black-background-top-view-3d-render-illustration_989822-1761.jpg" class="card-img-top" alt="Headphones Image" />
+          <div class="card-body">
+            <h2 class="card-title">Wireless Headphones</h2>
+            <p class="card-text">High-quality wireless headphones with noise cancellation.</p>
+            <div id="product2"></div>
+            <div id="counter2"></div>
+            <div id="totalPrice2"></div>
+            <button onclick="addToCart2()">Add Headphones</button>
+            <button onclick="removeQuantity2()">Remove Headphones</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://png.pngtree.com/background/20230526/original/pngtree-black-background-on-three-pink-iphone-x-picture-image_2741164.jpg" alt="Smartphone Image" class="card-img-top" />
+          <h2 class="card-title">Smartphone X</h2>
+          <p class="card-text">Latest smartphone with high-resolution display and powerful camera.</p>
+          <div id="product3"></div>
+          <div id="counter3"></div>
+          <div id="totalPrice3"></div>
+          <button onclick="addToCart3()">Add Mobile</button>
+          <button onclick="removeQuantity3()">Remove Mobile</button>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://img.lovepik.com/bg/20240103/Stunning-Laptop-and-Tablet-Image-with-Computer-on-A-Creative_2675917_wh860.jpg!/fw/860" class="card-img-top" alt="Tablet Image" />
+          <h2 class="card-title">Laptop Edition Tablet</h2>
+          <p class="card-text">
+            Experience powerful performance with the latest Laptop Edition Tablet.
+            Boasting a sleek design, vibrant display, and long battery life, it's perfect for work and entertainment.
+          </p>
+          <div id="product4"></div>
+          <div id="counter4"></div>
+          <div id="totalPrice4"></div>
+          <button onclick="addToCart4()">Add Tablet</button>
+          <button onclick="removeQuantity4()">Remove Tablet</button>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://audionic.co/cdn/shop/files/audionic-the-sound-master-black-airbud-550-slide-earbuds-35875112845468_copy_2.png?v=1734931845" class="card-img-top" alt="Airbuds Image" />
+          <div class="card-body">
+            <h5 class="card-title">Airbud 550 Slide Earbuds</h5>
+            <p class="card-text">Quad Mic ENC, Gaming Mode, 26 Hours Play Time, Ultra Low Latency 45ms</p>
+            <div id="product5"></div>
+            <div id="counter5"></div>
+            <div id="totalPrice5"></div>
+            <button onclick="addToCart5()">Add Air Birds</button>
+            <button onclick="removeQuantity5()">Remove Air Birds</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 id="grandTotal"></h2>
+    <footer style="margin: 20px; font-size: 18px;">Made By Ayan Habib</footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
