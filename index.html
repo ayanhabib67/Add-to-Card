@@ -6,81 +6,8 @@
   <title>Add to Card</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <style>
-    body {
-      background-color: #2c2c2c;
-      color: #f5f5f5;
-    }
-    header {
-      background-color: #444;
-      padding: 20px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    .card {
-      margin: 10px;
-      height: 100%;
-      background-color: #333;
-      color: #f5f5f5;
-      border: none;
-      border-radius: 15px;
-      overflow: hidden;
-    }
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 300px;
-    }
-    .card-img-top {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      transition: transform 0.3s ease-in-out;
-      border-radius: 15px 15px 0 0;
-    }
-    .card-img-top:hover {
-      transform: scale(1.05);
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      color: white;
-      background-color: #007bff;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      background-color: #0056b3;
-      transform: scale(1.05);
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    button:focus {
-      outline: none;
-      box-shadow: 0 0 5px 3px rgba(0, 123, 255, 0.8);
-    }
-    button:active {
-      transform: scale(0.98);
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-    }
-    .card-body #totalPrice1,
-    .card-body #totalPrice2,
-    .card-body #totalPrice3,
-    .card-body #totalPrice4,
-    .card-body #totalPrice5 {
-      font-weight: bold;
-      color: #f5f5f5;
-    }
-    .card:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
   <header>
@@ -157,10 +84,195 @@
           </div>
         </div>
       </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://images.samsung.com/is/image/samsung/p6pim/pk/qa65q70dausmm/gallery/pk-qled-q70d-511168-qa65q70dausmm-thumb-542196132?$216_216_PNG$" class="card-img-top" alt="Smart TV Image" />
+          <div class="card-body">
+            <h5 class="card-title">Smart TV</h5>
+            <p class="card-text">Ultra HD Smart TV with advanced features and connectivity.</p>
+            <div id="product6"></div>
+            <div id="counter6"></div>
+            <div id="totalPrice6"></div>
+            <button onclick="addToCart6()">Add Smart TV</button>
+            <button onclick="removeQuantity6()">Remove Smart TV</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://zerolifestyle.co/cdn/shop/files/ignite-black-02_300x300.webp?v=1722673246" class="card-img-top" alt="Smart Watch Image" />
+          <div class="card-body">
+            <h5 class="card-title">Smart Watch</h5>
+            <p class="card-text">Stylish smart watch with health tracking and notifications.</p>
+            <div id="product7"></div>
+            <div id="counter7"></div>
+            <div id="totalPrice7"></div>
+            <button onclick="addToCart7()">Add Smart Watch</button>
+            <button onclick="removeQuantity7()">Remove Smart Watch</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Camera Image" />
+          <div class="card-body">
+            <h5 class="card-title">Digital Camera</h5>
+            <p class="card-text">High-resolution digital camera for stunning photography.</p>
+            <div id="product8"></div>
+            <div id="counter8"></div>
+            <div id="totalPrice8"></div>
+            <button onclick="addToCart8()">Add Camera</button>
+            <button onclick="removeQuantity8()">Remove Camera</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://www-cdn.djiits.com/cms/uploads/32a4df4ce9e014fa44a38e24cc7fa97e@320*320.png" class="card-img-top" alt="DJI Drone Image" />
+          <div class="card-body">
+            <h5 class="card-title">DJI Drone</h5>
+            <p class="card-text">Advanced drone with 4K camera and intelligent flight modes.</p>
+            <div id="product9"></div>
+            <div id="counter9"></div>
+            <div id="totalPrice9"></div>
+            <button onclick="addToCart9()">Add DJI Drone</button>
+            <button onclick="removeQuantity9()">Remove DJI Drone</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXDZ4315Eu4hgThSaCPrOCQyk2qv0JQ94bWw&s" class="card-img-top" alt="GoPro Hero Image" />
+          <div class="card-body">
+            <h5 class="card-title">GoPro Hero</h5>
+            <p class="card-text">Rugged action camera for capturing adventures in 4K.</p>
+            <div id="product10"></div>
+            <div id="counter10"></div>
+            <div id="totalPrice10"></div>
+            <button onclick="addToCart10()">Add GoPro</button>
+            <button onclick="removeQuantity10()">Remove GoPro</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNZH6ubTeEn-g7qB5XLsNSDgZGH1-biVLHfg&s" class="card-img-top" alt="Apple iPhone 14 Image" />
+          <div class="card-body">
+            <h5 class="card-title">Apple iPhone 14</h5>
+            <p class="card-text">Latest iPhone with innovative features and sleek design.</p>
+            <div id="product11"></div>
+            <div id="counter11"></div>
+            <div id="totalPrice11"></div>
+            <button onclick="addToCart11()">Add iPhone</button>
+            <button onclick="removeQuantity11()">Remove iPhone</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Apple MacBook Pro Image" />
+          <div class="card-body">
+            <h5 class="card-title">Apple MacBook Pro</h5>
+            <p class="card-text">High-performance laptop with powerful M1 chip and stunning display.</p>
+            <div id="product12"></div>
+            <div id="counter12"></div>
+            <div id="totalPrice12"></div>
+            <button onclick="addToCart12()">Add MacBook</button>
+            <button onclick="removeQuantity12()">Remove MacBook</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp21cHCUmdEdwGv_eh-8N_Nm_J2DzmpVNXFw&s" class="card-img-top" alt="Apple AirPods Pro Image" />
+          <div class="card-body">
+            <h5 class="card-title">Apple AirPods Pro</h5>
+            <p class="card-text">Wireless earbuds with active noise cancellation and superior sound.</p>
+            <div id="product13"></div>
+            <div id="counter13"></div>
+            <div id="totalPrice13"></div>
+            <button onclick="addToCart13()">Add AirPods</button>
+            <button onclick="removeQuantity13()">Remove AirPods</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Apple iPad Image" />
+          <div class="card-body">
+            <h5 class="card-title">Apple iPad</h5>
+            <p class="card-text">Powerful tablet with a brilliant display and versatile performance.</p>
+            <div id="product14"></div>
+            <div id="counter14"></div>
+            <div id="totalPrice14"></div>
+            <button onclick="addToCart14()">Add iPad</button>
+            <button onclick="removeQuantity14()">Remove iPad</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="data:image/jpeg;base64,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" class="card-img-top" alt="DJI Osmo Image" />
+          <div class="card-body">
+            <h5 class="card-title">DJI Osmo</h5>
+            <p class="card-text">Handheld stabilizer and camera for smooth video recording.</p>
+            <div id="product15"></div>
+            <div id="counter15"></div>
+            <div id="totalPrice15"></div>
+            <button onclick="addToCart15()">Add DJI Osmo</button>
+            <button onclick="removeQuantity15()">Remove DJI Osmo</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="data:image/jpeg;base64,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" class="card-img-top" alt="DJI Ronin Image" />
+          <div class="card-body">
+            <h5 class="card-title">DJI Ronin</h5>
+            <p class="card-text">Professional gimbal system for cinematic smooth footage.</p>
+            <div id="product16"></div>
+            <div id="counter16"></div>
+            <div id="totalPrice16"></div>
+            <button onclick="addToCart16()">Add DJI Ronin</button>
+            <button onclick="removeQuantity16()">Remove DJI Ronin</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Dell XPS 15 Image" />
+          <div class="card-body">
+            <h5 class="card-title">Dell XPS 15</h5>
+            <p class="card-text">High-performance laptop with sleek design and powerful specs.</p>
+            <div id="product17"></div>
+            <div id="counter17"></div>
+            <div id="totalPrice17"></div>
+            <button onclick="addToCart17()">Add Dell XPS 15</button>
+            <button onclick="removeQuantity17()">Remove Dell XPS 15</button>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card d-flex">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQva8KT9SepKXnMvXrLYzL4tpKfcJJeLVkMMA&s" class="card-img-top" alt="Dell UltraSharp Monitor Image" />
+          <div class="card-body">
+            <h5 class="card-title">Dell UltraSharp Monitor</h5>
+            <p class="card-text">High-quality monitor with crisp display for professionals.</p>
+            <div id="product18"></div>
+            <div id="counter18"></div>
+            <div id="totalPrice18"></div>
+            <button onclick="addToCart18()">Add Dell Monitor</button>
+            <button onclick="removeQuantity18()">Remove Dell Monitor</button>
+          </div>
+        </div>
+      </div>
     </div>
+
     <h2 id="grandTotal"></h2>
-    <footer style="margin: 20px; font-size: 18px;">Made By Ayan Habib <br>
-      <span>Work in Process...</span></footer>
+    <footer>
+      Made by Ayan Habib <br>
+      <span>Work in Process...</span>
+    </footer>
   </div>
   <script src="app.js"></script>
 </body>
